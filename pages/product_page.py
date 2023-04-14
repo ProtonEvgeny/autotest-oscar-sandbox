@@ -43,3 +43,11 @@ class ProductPage(BasePage):
 
         assert basket_price_true, f'Expected: "[success message in chosen language] {item_price}"\n' \
                                   f'Actual: "[success message in chosen language] {success_message}"'
+
+    def should_not_be_success_message(self):
+        assert self.is_not_element_present(*ProductPageLocators.SUCCESS_ADD_TO_BASKET_ITEM_TEXT), \
+            'Success message is presented, but should not be'
+
+    def should_disappeared_success_message(self):
+        assert self.is_disappeared(*ProductPageLocators.SUCCESS_ADD_TO_BASKET_ITEM_TEXT), \
+            f'Success message is presented, but should be disappear'
