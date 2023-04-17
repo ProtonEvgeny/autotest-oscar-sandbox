@@ -49,7 +49,6 @@ def test_guest_should_see_login_link_on_product_page(browser):
     page.should_be_login_link()
 
 
-@pytest.mark.new
 def test_guest_cant_see_product_in_basket_opened_from_product_page(browser):
     link = f'http://selenium1py.pythonanywhere.com/en-gb/catalogue/the-city-and-the-stars_95/'
     page = ProductPage(browser, link)
